@@ -30,7 +30,7 @@ class ProjectSeeder extends Seeder
 
             $project->title = $faker->unique()->sentence($faker->numberBetween(3, 5));
             $project->slug = Str::slug($project->title, '-');
-            $project->client = $faker->sentence($faker->numberBetween(2, 3));
+            $project->client = $faker->name($faker->numberBetween(2, 3));
             $project->url = $faker->url();
             $project->description = $faker->optional()->text(500);
             $project->type_id = $faker->optional()->randomElement($type_ids);
